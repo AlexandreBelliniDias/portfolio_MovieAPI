@@ -38,11 +38,14 @@ section img{
     height: 100%;
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
+    overflow: visible;
+    z-index: 1;
 }
 
 .transparent-box:hover{
     opacity: 1;
 }
+
 
 .img-box{
     position: relative;
