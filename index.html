@@ -16,32 +16,80 @@
     <link rel="stylesheet" href="./css/myStyle.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Logo</h1>
-        <nav></nav>
-        <form>
-            <div class="form">
+    <nav>
+        <a onclick=returnTop()><img id='logo' src="./css/logoMovie.png" alt="Logo"></a>
+        <ul>
+            <li><a href="#titlePopular">Popular</a></li>
+            <li><a href="#titleTrending">Trending</a></li>
+            <li><a href="#titleTop_rated">Top Rated</a></li>
+            <li><a href="#titleUpcoming">Upcoming</a></li>
+        </ul>
+        <div class="container">
+            <form>
                 <input type="text" id="inputValue">
-            </div>
-            <button type="submit" id="search">Search</button>
-        </form>
+                <button type="submit" id="search">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div id='rows'>
+        <div class="movieCategory">
+            <div class="movie" id="searchResult"></div>
+            <button id='sRb' class="slideRight hide" onclick=hScroll(0,600) type="button">&gt</button>
+            <button id='sLb' class="slideLeft hide"  onclick=hScroll(0,-600) type="button">&lt</button>
+        </div>
+        <div class="movieCategory">
+            <h1 id='titlePopular'>Popular</h1>
+            <div id='popular'></div>
+            <button class="slideRight" onclick=hScroll(1,600) type="button">&gt</button>
+            <button class="slideLeft"  onclick=hScroll(1,-600) type="button">&lt</button>
+        </div>
+        <div class="movieCategory">
+            <h1 id='titleTrending'>Trending</h1>
+            <div id='trending'></div>
+            <button class="slideRight" onclick=hScroll(2,600) type="button">&gt</button>
+            <button class="slideLeft"  onclick=hScroll(2,-600) type="button">&lt</button>
+        </div>
+        <div class="movieCategory">
+            <h1 id='titleTop_rated'>Top Rated</h1>
+            <div id='topRated'></div>
+            <button class="slideRight" onclick=hScroll(3,600) type="button">&gt</button>
+            <button class="slideLeft"  onclick=hScroll(3,-600) type="button">&lt</button>
+        </div>
+        <div class="movieCategory">
+            <h1 id='titleUpcoming'>Upcoming</h1>
+            <div id='upcoming'></div>
+            <button class="slideRight" onclick=hScroll(4,600) type="button">&gt</button>
+            <button class="slideLeft"  onclick=hScroll(4,-600) type="button">&lt</button>
+        </div>
     </div>
-    <div id="searchResult"></div>
-    <button id="btn">Launch</button>
-
+    
     <!--Modal: modalYT-->
     <div class="modal fade" id="modalYT" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-                <div id='test' class="embed-responsive embed-responsive-16by9 z-depth-1-half">
-                    
+            <!--Body-->
+            <div class="modal-body mb-0 p-0">
+                <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                <iframe id='iframe' class="embed-responsive-item" src="https://www.youtube.com/embed/A3PDXmYoF5U"
+                    allowfullscreen></iframe>
                 </div>
+            </div>
+            <!--Footer-->
+            <div id='footerModal' class="modal-footer justify-content-center flex-column flex-md-row">
+                <h1 id='title' class="mr-4"></h1>
+                <p id="genre" class="mr-4"></p>
+                <p id='release_date' class="mr-4"></p>
+                <p id='vote_average' class="mr-4"></p>
+                <p id='overview' class="mr-4"></p>
+                <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
+                data-dismiss="modal">Close</button>
+            </div>
             </div>
         </div>
     </div>
     <!--Modal: modalYT-->
-
+    <footer></footer>
 
     <!-- jQuery -->
     <script type="text/javascript" src="mdb/js/jquery.min.js"></script>
